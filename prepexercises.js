@@ -84,21 +84,43 @@ function multiplyBy10(number, n){
 
 // 1.Modify your sum function from the Basic Requirements section to accept two parameters, start and end: sum should now compute the sum of the numbers from start to end, e.g.
 	
-   function sum(start, end) {
-   	if (end === 0){
-   		return start;
+   function sum1(start, end) {
+   	if (end === start){
+   		return end;
    	}
-   	while (start !== end){
-   		return start + sum(start, end - 1)
-   	}
-   }
+   return  start + sum1(start + 1 , end);
+   
+  }
+
 //  // TODO: your code here
 //  }
 //  sum(2, 7); // => 2 + 3 + 4 + 5 + 6 + 7 => 27
 //  sum(3, 5); // => 3 + 4 + 5 => 12
 // What happens if start is larger than end? Modify sum to check for this case and, when found, swap the start and end arguments.
 
+var end1 = 0;
+var start1 = 0;
+function sum2(start, end) {
+   	if (end === start){
+   		return end;
+   	}
+   	else if (start < end ){
+   return  start + sum2(start + 1 , end);   
+  }
+  else end1= start;
+       start1 = end;
+       return start1 + sum2(start1 + 1, end1)
+}
+
+
 // 2.Write a function product that works like sum, except it should compute the product of the numbers from start to end.
+function prod(start, end) {
+   	if (end === start){
+   		return end;
+   	}
+   return  start * prod(start + 1 , end);
+   
+  }
 
 // Refactor your sum function from earlier to be implemented in terms of product.
 
