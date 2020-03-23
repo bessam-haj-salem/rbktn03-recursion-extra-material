@@ -147,11 +147,33 @@ function prod(start, end) {
 
 // 4.Write a function called isEven that, given a number n as a parameter, returns true if that number is even, and false otherwise; however, you need to do this without using the % operator
   function even(n){
-  	if (n / 2 )
-  }
+  	if (n === 0){ 
+		return true}
+	else if (n === 1){
+		return false;
+	}
+	else return even(n-1) + even(n - 2);
+} 
+  
 // 5.Write a function called multiply that accepts two numbers as parameters, and multiplies them together -- but without using the * operator; instead, you'll need to use repeated addition.
-
+  function multiply(x, y){
+  	if(y === 1){
+  		return x;
+  	}
+  	else return x + multiply(x, y -1);
+  }
+  
+    
+  
 // 6.Write a JavaScript program to get the integers in range (x, y)
+function integ(x, y){
+	if (n === 0){ 
+		return true}
+	else if (n === 1){
+		return false;
+	}
+	else return even(n-1) + even(n - 2);
+}
 
 //  range(1,9)   => '2, 3, 4, 5, 6, 7, 8'
 //  range(21,33) => '22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32'
