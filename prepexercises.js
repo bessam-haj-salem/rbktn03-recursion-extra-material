@@ -2,9 +2,13 @@
 //------------------------- Basic Requirments -------------------------
 // 1.Summation to n: Let's implement the function sum that takes a single parameter n, and computes the sum of all integers up to n starting from 0, e.g
 
-//  function sum(n) {
-//  // TODO: your code here
-//  }
+   function sum(n) {
+	if( n === 0){
+		return 0;
+	}
+    return n + sum(n-1);
+}
+
 //  sum(3); // => 3 + 2 + 1 + 0 => 6
 //  sum(4); // => 4 + 3 + 2 + 1 + 0 => 10
 //  sum(5); // => 5 + 4 + 3 + 2 + 1 + 0 => 15
@@ -12,7 +16,14 @@
 
 // 2.Factorial of n: The factorial of n is the product of all the integers preceding n, starting with 1, e.g.
 
-//  function factorial(n) {
+  ffunction factorial(n) {
+  	if (n ===0 || n === 1){
+  		return 1;
+  	}
+  	else return n * factorial(n -1);
+  }
+
+
 //  // TODO: your code here
 //  }
 //  factorial(3); // => 3 * 2 * 1 => 6
@@ -22,8 +33,14 @@
 
 // 3.Repeating a String n Times: Let's write a function called repeatString that takes two parameters: a string str, which is the string to be repeated, and count -- a number representing how many times the string str should be repeated, e.g.
 
-//  function repeatString(str, count) {
+  function repeatString(str, count) {
 //  // TODO: your code here
+if(count === 0){
+	return "";
+}
+  return  str + repeatString(str, count -1);
+}
+
 //  }
 //  repeatString('dog', 0); // => ''
 //  repeatString('dog', 1); // => 'dog'
@@ -32,7 +49,7 @@
 // Your task is to implement the repeatString function using the observation that to repeat a string some count,
 //  we can concatenate that string onto the result of repeating the string count - 1.
 //  HINT: Observe that repeatString('dog', 0) should yield the empty string, ''.
-//  What happens if you evaluate this: ' ' + 'dog'?
+//  What happens if you evaluate this: ' ' + 'dog'? ===> it will return 'dog'
 
 // 4.Compute the nth Fibonacci Number: The fibonacci numbers are represented by the following sequence:
 
@@ -46,8 +63,16 @@
 //  fib(1) is 1
 //  fib(n) is fib(n - 1) + fib(n - 2)
 //  Write a function called fib that accepts a number n as a parameter and computes the nth fibonacci number using the above rules.
-
+  function fib(n){
+  	if (n === 0 || n === 1){
+  		return 1;
+  	}
+  	else return fib(n -1) + fib(n - 2);
+  }
 // 5.Write function that multiply the number by 10 n time
+function multiplyBy10(number, n){
+	
+}
 
 //  multiplyBy10(number, n)
 //  multiplyBy10(4,3) => 4000
