@@ -134,10 +134,21 @@ function prod(start, end) {
 //  return x - 1;
 //  }
 // Your task is to write a function called add that takes two numbers as parameters, x and y, and adds them together.
-//  The catch is that you can only use inc and dec to accomplish this.
+//  The catch is that you can only use inc and dec to accomplish +  function add(x, y){
+ 	function add(x, y){
+ 	if ( y === 0){
+ 		return x;
+ 	}
+ 	else {
+ 		return add(inc(x),dec(y));
+ 	}
+
+}
 
 // 4.Write a function called isEven that, given a number n as a parameter, returns true if that number is even, and false otherwise; however, you need to do this without using the % operator
-
+  function even(n){
+  	if (n / 2 )
+  }
 // 5.Write a function called multiply that accepts two numbers as parameters, and multiplies them together -- but without using the * operator; instead, you'll need to use repeated addition.
 
 // 6.Write a JavaScript program to get the integers in range (x, y)
