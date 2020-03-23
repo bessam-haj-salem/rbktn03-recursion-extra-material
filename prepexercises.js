@@ -71,7 +71,10 @@ if(count === 0){
   }
 // 5.Write function that multiply the number by 10 n time
 function multiplyBy10(number, n){
-	
+	if ( n === 0){
+		return number;
+	}
+	else return 10 * multiplyBy10(number, n - 1);
 }
 
 //  multiplyBy10(number, n)
@@ -80,8 +83,15 @@ function multiplyBy10(number, n){
 // ------------------------- More Practice -------------------------
 
 // 1.Modify your sum function from the Basic Requirements section to accept two parameters, start and end: sum should now compute the sum of the numbers from start to end, e.g.
-
-//  function sum(start, end) {
+	
+   function sum(start, end) {
+   	if (end === 0){
+   		return start;
+   	}
+   	while (start !== end){
+   		return start + sum(start, end - 1)
+   	}
+   }
 //  // TODO: your code here
 //  }
 //  sum(2, 7); // => 2 + 3 + 4 + 5 + 6 + 7 => 27
