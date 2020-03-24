@@ -238,11 +238,30 @@ function module1(x, y){
  	else return countChars(str.slice(1), chr);
 }
 // 4. Implement a function called indexOf that accepts two parameters: a string and a character, and returns the first index of character in the string. You'll need to make use of the techniques for accessing the first element of a string and the rest of the string (slice) as before.
- 
+ function indexOf(str, chr){
+	if(str.length === 0){
+		return 0;
+	}
+	else if(str[0] === chr){
+		return 0;
+	}
+	else return  1 + indexOf(str.slice(1), chr);
+}
 // 5.The power function in the lecture works, but can be made considerably faster through a method known as successive squaring. To get an idea of how this works, observe that:
 
 // Modify the power function to take advantage of this technique.
-
+function power(base, exp){
+ 	if (exp === 0){
+ 		return 1;
+ 	}
+ 	else if(exp === 1){
+ 		return base;
+ 	}
+ 	else if (exp % 2 === 0){ // check if its an even number
+ 		return power(base * base, exp/2);
+ 	}
+ 	else return base * power(x * x, (exp - 1)/ 2);
+ }
 // 6.Write function called reverse that take a string and return the revers string
 function reverse(str){
  	if(str === ""){
@@ -255,7 +274,21 @@ function reverse(str){
 //  'noitseuq ysae na eb dluoc siht'.
 
 // 7.Find the greatest common divisor of two numbers.
-
+function gcd(a, b){
+	if(a===b){           
+		return a;  
+	}
+	else if (a > b){
+		return gcd(a - b, b); 
+	}
+	else return gcd(a, b - a); 
+}
 // 8.Find the lowest common multiple of two numbers. Assume that the two numbers are greater than or equal to 2.
-
+function lcd(a, b){
+    if(a===b){
+		return a;
+    }
+    else return (a * b) / gcd(a,b) ;
+    
+ }
 // 9.There are N number of persons in a party, find the total number of handshake such that a person can handshake only once.
